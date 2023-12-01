@@ -1,11 +1,12 @@
 ﻿using PetSim;
 
-var dog = new Dog("Vašek");
+Console.WriteLine("Wanna cat? (yes/no)");
+var isCat = Console.ReadLine() == "yes";
 
-dog.Feed();
+Pet pet = isCat ? new Cat("Ladislava") : new Dog("Vašek");
 
-dog.Play();
-dog.Play();
-dog.Play();
-dog.Play();
-dog.Play();
+pet.Feed();
+
+pet.Play();
+pet.Play();
+pet.Play();

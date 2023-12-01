@@ -6,57 +6,10 @@ using System.Threading.Tasks;
 
 namespace PetSim
 {
-    public class Dog
+    internal class Dog : Pet
     {
-        private int hunger;
-        public int Hunger
+        public Dog(string name) : base(name)
         {
-            private set
-            {
-                hunger = value;
-
-                CheckHunger();
-            }
-            get
-            {
-                return hunger;
-            }
-        }
-
-        public string Name { get; init; }
-
-        public Dog(string name)
-        {
-            this.Name = name;
-        }
-        
-        public int Feed()
-        {
-            Console.WriteLine("Eating...");
-
-            return Hunger -= 20;
-        }
-
-        public int Play()
-        {
-            Console.WriteLine("Playing...");
-
-            return Hunger += 30;
-        }
-
-        private void CheckHunger()
-        {
-            if (hunger > 40 && hunger <= 100)
-            {
-                Console.WriteLine("Hungry!");
-                return;
-            }
-
-            if (hunger > 100)
-            {
-                Console.WriteLine("I DIEEEEED!!!");
-                return;
-            }
         }
     }
 }

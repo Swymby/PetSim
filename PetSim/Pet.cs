@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetSim
 {
-    internal class Pet
+    internal abstract class Pet
     {
         private int hunger;
         public int Hunger
@@ -44,6 +44,8 @@ namespace PetSim
             return Hunger += 30;
         }
 
+        // public abstract void Do();
+
         private void CheckHunger()
         {
             if (hunger > 40 && hunger <= 100)
@@ -54,8 +56,7 @@ namespace PetSim
 
             if (hunger > 100)
             {
-                Console.WriteLine("I DIEEEEED!!!");
-                return;
+                throw new DeadPetException();
             }
         }
     }
